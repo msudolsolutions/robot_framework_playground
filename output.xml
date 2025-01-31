@@ -1,88 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.9.6 on darwin)" generated="2025-01-31T23:20:21.211548" rpa="false" schemaversion="5">
-<suite id="s1" name="Example Test" source="/Users/mareksudol/Projects/robot_test_project/tests/example_test.robot">
-<test id="s1-t1" name="Open Google in Safari and Search" line="10">
+<robot generator="Robot 7.2 (Python 3.9.6 on darwin)" generated="2025-02-01T00:06:04.185323" rpa="false" schemaversion="5">
+<suite id="s1" name="Example Test Suite" source="/Users/mareksudol/Projects/robot_framework_playground/tests/example_test_suite.robot">
+<test id="s1-t1" name="Test Case 1" line="10">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-01-31T23:20:21.362425" level="INFO">Opening browser 'safari' to base url 'https://www.google.com'.</msg>
-<arg>https://www.google.com</arg>
+<msg time="2025-02-01T00:06:04.291388" level="INFO">Opening browser 'safari' to base url 'https://the-internet.herokuapp.com'.</msg>
+<arg>${WEBSITE}</arg>
 <arg>safari</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-01-31T23:20:21.362183" elapsed="1.614069"/>
+<status status="PASS" start="2025-02-01T00:06:04.291232" elapsed="3.230845"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2025-01-31T23:20:22.978763" elapsed="0.021985"/>
+<status status="PASS" start="2025-02-01T00:06:07.522934" elapsed="0.021295"/>
 </kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2025-01-31T23:20:23.012502" level="INFO">Clicking element 'xpath=//*[@id="L2AGLb"]'.</msg>
-<arg>xpath=//*[@id="L2AGLb"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-31T23:20:23.008351" elapsed="0.385227"/>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-01T00:06:07.547889" level="INFO">Verifying element 'xpath=//*[@id="content"]/h1' contains exact text 'Welcome to the-internet'.</msg>
+<arg>xpath=//*[@id="content"]/h1</arg>
+<arg>Welcome to the-internet</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-01T00:06:07.545151" elapsed="0.011248"/>
 </kw>
-<msg time="2025-01-31T23:20:23.394103" level="INFO">${status} = PASS</msg>
-<msg time="2025-01-31T23:20:23.394331" level="INFO">${result} = None</msg>
-<var>${status}</var>
-<var>${result}</var>
-<arg>Click Element</arg>
-<arg>xpath=//*[@id="L2AGLb"]</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2025-01-31T23:20:23.006019" elapsed="0.388446"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2025-01-31T23:20:23.396087" level="INFO">Typing text 'Robot Framework' into text field 'name=q'.</msg>
-<arg>name=q</arg>
-<arg>${SEARCH_QUERY}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2025-01-31T23:20:23.395131" elapsed="0.078316"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2025-01-31T23:20:23.475300" level="INFO">Sending key(s) ('ENTER',) to name=q element.</msg>
-<msg time="2025-01-31T23:20:24.237621" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2025-01-31T23:20:24.238535" level="INFO">Releasing special key ENTER.</msg>
-<arg>name=q</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2025-01-31T23:20:23.474232" elapsed="0.790512"/>
-</kw>
-<kw name="Run Keyword And Expect Error" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2025-01-31T23:20:29.504471" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-7.png"&gt;&lt;img src="selenium-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2025-01-31T23:20:29.505649" level="FAIL">Element 'xpath=//div[@id='search']' not visible after 5 seconds.</msg>
-<arg>xpath=//div[@id='search']</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2025-01-31T23:20:24.267118" elapsed="5.245592">Element 'xpath=//div[@id='search']' not visible after 5 seconds.</status>
-</kw>
-<msg time="2025-01-31T23:20:29.513328" level="INFO">${error} = Element 'xpath=//div[@id='search']' not visible after 5 seconds.</msg>
-<var>${error}</var>
-<arg>*not visible after*</arg>
-<arg>Wait Until Element Is Visible</arg>
-<arg>xpath=//div[@id='search']</arg>
-<doc>Runs the keyword and checks that the expected error occurred.</doc>
-<status status="PASS" start="2025-01-31T23:20:24.265877" elapsed="5.247551"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2025-01-31T23:20:29.597301" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-8.png"&gt;&lt;img src="selenium-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2025-01-31T23:20:29.514199" elapsed="0.084319"/>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<status status="PASS" start="2025-01-31T23:20:29.598993" elapsed="0.224044"/>
-</kw>
-<status status="PASS" start="2025-01-31T23:20:21.361421" elapsed="8.462215"/>
+<doc>Open the-internet in Safari</doc>
+<status status="PASS" start="2025-02-01T00:06:04.290574" elapsed="3.266043"/>
 </test>
-<doc>This is an example test in Robot Framework using Selenium</doc>
-<status status="PASS" start="2025-01-31T23:20:21.213592" elapsed="8.611300"/>
+<test id="s1-t2" name="Test Case 2" line="16">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-01T00:06:07.557286" level="INFO">Clicking element 'link=Add/Remove Elements'.</msg>
+<arg>link=Add/Remove Elements</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-01T00:06:07.557127" elapsed="0.024999"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="content"]/h3</arg>
+<arg>timeout=3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-01T00:06:07.582541" elapsed="0.220511"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2025-02-01T00:06:07.803883" level="INFO">Verifying element 'xpath=//*[@id="content"]/h3' contains exact text 'Add/Remove Elements'.</msg>
+<arg>xpath=//*[@id="content"]/h3</arg>
+<arg>Add/Remove Elements</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2025-02-01T00:06:07.803477" elapsed="0.007359"/>
+</kw>
+<doc>Click on the Add/Remove Elements link</doc>
+<status status="PASS" start="2025-02-01T00:06:07.556855" elapsed="0.254445"/>
+</test>
+<test id="s1-t3" name="Test Case 3" line="22">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-02-01T00:06:07.812217" level="INFO">Clicking element 'xpath=//button[text()='Add Element']'.</msg>
+<arg>xpath=//button[text()='Add Element']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-02-01T00:06:07.812020" elapsed="0.019898"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="elements"]/button</arg>
+<arg>timeout=3s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-02-01T00:06:07.832507" elapsed="0.006996"/>
+</kw>
+<doc>Add a new element</doc>
+<status status="PASS" start="2025-02-01T00:06:07.811671" elapsed="0.028018"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-02-01T00:06:07.840130" elapsed="0.150441"/>
+</kw>
+<status status="PASS" start="2025-02-01T00:06:04.186143" elapsed="3.804530"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Example Test" id="s1" pass="1" fail="0" skip="0">Example Test</stat>
+<stat name="Example Test Suite" id="s1" pass="3" fail="0" skip="0">Example Test Suite</stat>
 </suite>
 </statistics>
 <errors>
